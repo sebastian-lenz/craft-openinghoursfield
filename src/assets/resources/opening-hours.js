@@ -361,7 +361,7 @@ function St(t){var e=lt
 "function"==typeof t.__c&&t.__c(),lt=e}function wt(t){var e=lt
 t.__c=t.__(),lt=e}function kt(t,e){return!t||t.length!==e.length||e.some((function(e,n){return e!==t[n]}))}function Ct(t){var e=t.onChange,n=t.value,r=bt()
 return mt((function(){var t=jQuery.data(r.current,"lightswitch")
-if(t instanceof Craft.LightSwitch)return n&&t.turnOn(),t.onChange=function(){e(t.on)},function(){return t.destroy()}}),[]),N("div",Object.assign({className:G("lightswitch",{on:n}),tabIndex:0,role:"switch",ref:r},{children:N("div",Object.assign({class:"lightswitch-container"},{children:N("div",{class:"handle"},void 0)}),void 0)}),void 0)}function Et(t,e){var n=arguments.length>2&&void 0!==arguments[2]?arguments[2]:0
+if(t||(t=new Craft.LightSwitch(r.current,{})),t instanceof Craft.LightSwitch)return n&&t.turnOn(),t.onChange=function(){e(t.on)},function(){return t.destroy()}}),[]),N("div",Object.assign({className:G("lightswitch",{on:n}),tabIndex:0,role:"switch",ref:r},{children:N("div",Object.assign({class:"lightswitch-container"},{children:N("div",{class:"handle"},void 0)}),void 0)}),void 0)}function Et(t,e){var n=arguments.length>2&&void 0!==arguments[2]?arguments[2]:0
 return 60*(60*t+e)+n}var Rt=n(1506),At=n.n(Rt)
 function Dt(t){for(var e,n,r=Craft.timepickerOptions,o=r.lang,i=r.timeFormat,c=function(t){return[Math.floor(t/3600),Math.floor(t/60)%60,t%60]}(t),a=Z()(c,3),u=a[0],l=a[1],s=a[2],f=new Date(1970,0,2,u,l,s,0),p="",d=0;d<i.length;d++)switch(n=i.charAt(d)){case"a":p+=f.getHours()>11?o.pm:o.am
 break
