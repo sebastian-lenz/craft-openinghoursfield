@@ -26,13 +26,6 @@ class AlwaysValidity extends Validity
   /**
    * @inheritDoc
    */
-  public function getPriority(): int {
-    return Validity::MEDIUM_PRIORITY;
-  }
-
-  /**
-   * @inheritDoc
-   */
   public function init() {
     parent::init();
     sort($this->weekDays);

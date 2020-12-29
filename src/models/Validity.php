@@ -39,11 +39,6 @@ abstract class Validity extends Model
   abstract public function getJsCondition(): string;
 
   /**
-   * @return int
-   */
-  abstract public function getPriority(): int;
-
-  /**
    * @return bool
    */
   abstract public function isNever(): bool;

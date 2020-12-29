@@ -51,13 +51,6 @@ class RangesValidity extends AlwaysValidity
   /**
    * @inheritDoc
    */
-  public function getPriority(): int {
-    return Validity::HIGH_PRIORITY;
-  }
-
-  /**
-   * @inheritDoc
-   */
   public function init() {
     parent::init();
     usort($this->_dateRanges, [DateRange::class, 'compare']);

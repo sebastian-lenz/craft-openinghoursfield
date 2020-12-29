@@ -53,24 +53,7 @@ class OpeningHours extends Model
    * @return Specification[]
    */
   public function getSpecificationsByPriority(): array {
-    $records = [];
-    foreach ($this->_specifications as $index => $specification) {
-      $records[] = [
-        'sort' => $index,
-        'specification' => $specification,
-        'priority' => $specification->getPriority(),
-      ];
-    }
-
-    usort($records, function(array $lft, array $rgt) {
-      return $lft['priority'] == $rgt['priority']
-        ? $lft['sort'] - $rgt['sort']
-        : $lft['priority'] - $rgt['priority'];
-    });
-
-    return array_map(function(array $record) {
-      return $record['specification'];
-    }, $records);
+    return array_reverse($this->_specifications);
   }
 
   /**

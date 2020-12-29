@@ -36,13 +36,6 @@ class DatesValidity extends Validity
   /**
    * @inheritDoc
    */
-  public function getPriority(): int {
-    return Validity::HIGH_PRIORITY;
-  }
-
-  /**
-   * @inheritDoc
-   */
   public function init() {
     parent::init();
     sort($this->dates);
