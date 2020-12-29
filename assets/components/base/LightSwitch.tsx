@@ -11,7 +11,11 @@ export default function Lightswitch({ onChange, value }: Props) {
   const ref = useRef<HTMLDivElement>();
 
   useEffect(() => {
-    const lightSwitch = jQuery.data(ref.current, 'lightswitch');
+    let lightSwitch = jQuery.data(ref.current, 'lightswitch');
+    if (!lightSwitch) {
+      lightSwitch = new Craft.LightSwitch(ref.current, {});
+    }
+
     if (lightSwitch instanceof Craft.LightSwitch) {
       if (value) lightSwitch.turnOn();
       lightSwitch.onChange = () => {
