@@ -1,0 +1,14 @@
+{% do view.registerAssetBundle('lenz\\openinghoursfield\\assets\\FieldAsset') %}
+
+{% set rootId = name ~ 'Root' %}
+
+{% namespace field.handle %}
+  <div class="tohField" id="{{ rootId }}">
+    <input type="hidden" name="model" value="{{ value.toJson|json_encode }}"/>
+    <div class="tohField--app"></div>
+  </div>
+
+  {% js %}
+    lenz.openingHours.create("{{ rootId|namespaceInputId }}");
+  {% endjs %}
+{% endnamespace %}

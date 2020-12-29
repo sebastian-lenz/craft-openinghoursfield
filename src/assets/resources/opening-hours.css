@@ -1,0 +1,5 @@
+.tohField--timeRanges{margin:-5px}.tohField--timeRanges,.tohField--timeRangesContainer{display:flex;flex-flow:row wrap}.tohField--timeRangesRow{padding:5px}.tohField--timeRangesRow > *{margin-right:10px}.tohField--timeRangesRow .timewrapper{width:6em}.tohField--timeRangeActions{padding:5px}
+.tohField--dates{display:flex;flex-flow:row wrap;margin:-5px}.tohField--dates > *{padding:5px}.tohField--datesRow > .icon{margin-left:5px}
+.tohField--months{display:grid;grid-template-columns:repeat(4,1fr);grid-gap:1px;overflow:hidden;border-radius:5px}.tohField--monthsItem{padding:7px 10px;background:rgba(96,125,159,0.25);cursor:pointer}.tohField--monthsItem.checked{background:rgba(96,125,159,0.5)}
+.tohField--dateRanges{margin:-5px}.tohField--dateRanges,.tohField--dateRangesContainer{display:flex;flex-flow:row wrap}.tohField--dateRangesRow{padding:5px;white-space:nowrap}.tohField--dateRangesRow > span{margin:0 5px}.tohField--dateRangesRow > a{margin:0 10px}.tohField--timeRangeActions{padding:5px}
+body.ltr .tohField--app .matrixblock > .titlebar{padding-left:15px}body.ltr .tohField--app .matrixblock > .titlebar > .preview{opacity:.5}

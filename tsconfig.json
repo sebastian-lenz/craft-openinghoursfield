@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "importHelpers": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact",
+    "moduleResolution": "node",
+    "strict": true,
+    "target": "es6",
+    "rootDir": "./assets",
+    "skipLibCheck": true
+  },
+  "include": ["assets/**/*.ts", "assets/**/*.tsx"]
+}
