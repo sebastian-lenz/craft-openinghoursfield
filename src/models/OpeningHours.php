@@ -4,7 +4,7 @@ namespace lenz\openinghoursfield\models;
 
 use craft\base\Model;
 use craft\helpers\Template;
-use lenz\craft\utils\models\ModelArrayValidator;
+use lenz\craft\utils\validators\ModelArrayValidator;
 use Twig\Markup;
 
 /**

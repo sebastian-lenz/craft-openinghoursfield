@@ -2,10 +2,9 @@
 
 namespace lenz\openinghoursfield\models\validities;
 
-use lenz\craft\utils\models\ModelArrayValidator;
+use lenz\craft\utils\validators\ModelArrayValidator;
 use lenz\openinghoursfield\helpers\DateHelpers;
 use lenz\openinghoursfield\models\DateRange;
-use lenz\openinghoursfield\models\Validity;
 
 /**
  * Class RangesValidity

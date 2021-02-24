@@ -3,7 +3,6 @@
 namespace lenz\openinghoursfield\models\validities;
 
 use lenz\openinghoursfield\helpers\DateHelpers;
-use lenz\openinghoursfield\models\Validity;
 
 /**
  * Class MonthsValidity

@@ -4,8 +4,8 @@ namespace lenz\openinghoursfield\models;
 
 use craft\base\Model;
 use Exception;
-use lenz\craft\utils\models\ModelArrayValidator;
-use lenz\craft\utils\models\ModelValidator;
+use lenz\craft\utils\validators\ModelArrayValidator;
+use lenz\craft\utils\validators\ModelValidator;
 use lenz\openinghoursfield\helpers\DateHelpers;
 
 /**
