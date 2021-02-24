@@ -25,13 +25,6 @@ abstract class Validity extends Model
     'ranges' => RangesValidity::class,
   ];
 
-  /**
-   * Priority levels.
-   */
-  const HIGH_PRIORITY = 3;
-  const MEDIUM_PRIORITY = 2;
-  const LOW_PRIORITY = 1;
-
 
   /**
    * @return string
