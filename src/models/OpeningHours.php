@@ -52,8 +52,17 @@ class OpeningHours extends Model
   /**
    * @return Specification[]
    */
+  public function getEnabledSpecifications(): array {
+    return array_filter($this->_specifications, function(Specification $specifications) {
+      return $specifications->enabled;
+    });
+  }
+
+  /**
+   * @return Specification[]
+   */
   public function getSpecificationsByPriority(): array {
-    return array_reverse($this->_specifications);
+    return array_reverse($this->getEnabledSpecifications());
   }
 
   /**

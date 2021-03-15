@@ -1,6 +1,7 @@
 <?php
 
 return [
+  'Activate' => 'Aktivieren',
   'Add date' => 'Datum hinzufügen',
   'Add specification' => 'Regel hinzufügen',
   'Add time slot' => 'Zeitfenster hinzufügen',
@@ -9,6 +10,8 @@ return [
   'Between certain dates' => 'Zwischen bestimmten Daten',
   'Closed' => 'Geschlossen',
   'Dates' => 'Daten',
+  'Deactivate' => 'Deaktivieren',
+  'Deactivated' => 'Deaktiviert',
   'In certain months' => 'In bestimmten Monaten',
   'In the months' => 'In den Monaten',
   'Never' => 'Nie',
@@ -16,6 +19,7 @@ return [
   'Opened' => 'Geöffnet',
   'Opening state' => 'Öffnungszustand',
   'Opening times' => 'Öffnungszeiten',
+  'Remove' => 'Löschen',
   'Specification' => 'Regel',
   'This specification applies' => 'Diese Regel gilt',
 ];

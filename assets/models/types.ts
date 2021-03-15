@@ -49,6 +49,7 @@ export interface OpeningHoursModel {
 }
 
 export interface SpecificationModel {
+  enabled: boolean;
   state: 'closed' | 'opened';
   timeRanges: Array<TimeRangeModel>;
   uid: string;

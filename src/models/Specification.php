@@ -17,6 +17,11 @@ use lenz\openinghoursfield\helpers\DateHelpers;
 class Specification extends Model
 {
   /**
+   * @var bool
+   */
+  public $enabled = true;
+
+  /**
    * @var string
    */
   public $state = 'closed';
@@ -53,13 +58,6 @@ class Specification extends Model
     ]);
 
     return "if($condition)return$json;";
-  }
-
-  /**
-   * @return int
-   */
-  public function getPriority(): int{
-    return $this->_validity->getPriority();
   }
 
   /**
@@ -106,7 +104,8 @@ class Specification extends Model
    */
   public function rules() {
     return array_merge(parent::rules(), [
-      [['state', 'timeRanges', 'uid', 'validity'], 'required'],
+      [['enabled', 'state', 'timeRanges', 'uid', 'validity'], 'required'],
+      ['enabled', 'bool'],
       ['state', 'in', 'range' => ['closed', 'opened']],
       ['timeRanges', ModelArrayValidator::class, 'modelClass' => TimeRange::class],
       ['uid', 'string'],
@@ -145,6 +144,7 @@ class Specification extends Model
    */
   public function toJson(): array {
     return [
+      'enabled' => $this->enabled,
       'state' => $this->state,
       'timeRanges' => $this->_timeRanges,
       'uid' => $this->uid,

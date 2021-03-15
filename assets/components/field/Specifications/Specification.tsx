@@ -17,8 +17,10 @@ export default function Specification(props: Props) {
 
   return (
     <DragListBlock
+      enabled={spec.enabled}
       label={t('Specification')}
       onDelete={() => api.deleteSpec(spec.uid)}
+      onEnabled={(enabled) => api.updateSpec(spec.uid, { enabled })}
       preview={explainSpecification(spec)}
       uid={spec.uid}
     >

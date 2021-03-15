@@ -15,7 +15,7 @@
     "babel-loader": "^8.2.2",
     "classnames": "^2.2.6",
     "core-js": "^3.8.1",
-    "craft-cp-typings": "github:sebastian-lenz/craft-cp-types",
+    "craft-cp-types": "github:sebastian-lenz/craft-cp-types",
     "css-loader": "^5.0.1",
     "mini-css-extract-plugin": "^1.3.3",
     "preact": "^10.5.7",

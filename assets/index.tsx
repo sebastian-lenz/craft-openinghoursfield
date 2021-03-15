@@ -1,4 +1,4 @@
-/// <reference path="../node_modules/craft-cp-typings/index.d.ts"/>
+/// <reference path="../node_modules/craft-cp-types/index.d.ts"/>
 
 import { render } from 'preact';
 import Field from './components/Field';

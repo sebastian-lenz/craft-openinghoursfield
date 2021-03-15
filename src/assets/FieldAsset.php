@@ -38,6 +38,7 @@ class FieldAsset extends AssetBundle
 
     if ($view instanceof View) {
       $view->registerTranslations('openinghoursfield', [
+        'Activate',
         'Add date',
         'Add specification',
         'Add time slot',
@@ -46,6 +47,8 @@ class FieldAsset extends AssetBundle
         'Between certain dates',
         'Closed',
         'Dates',
+        'Deactivate',
+        'Deactivated',
         'In certain months',
         'In the months',
         'Never',
@@ -53,6 +56,7 @@ class FieldAsset extends AssetBundle
         'Opened',
         'Opening state',
         'Opening times',
+        'Remove',
         'Specification',
         'This specification applies',
       ]);
