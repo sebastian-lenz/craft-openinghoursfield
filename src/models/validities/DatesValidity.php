@@ -26,10 +26,10 @@ class DatesValidity extends Validity
 
     return implode('', [
       $json, '.filter(function(d){return ',
-        'value.getFullYear()==d[0]&&',
-        'value.getMonth()==d[1]&&',
-        'value.getDay()==d[2]',
-      '}).length>=0'
+        'v.getFullYear()==d[0]&&',
+        'v.getMonth()==d[1]&&',
+        'v.getDay()==d[2]',
+      '}).length>0'
     ]);
   }
 
@@ -49,7 +49,7 @@ class DatesValidity extends Validity
   }
 
   /**
-   * @return array|void
+   * @return array
    * @noinspection PhpMissingReturnTypeInspection
    */
   public function rules() {

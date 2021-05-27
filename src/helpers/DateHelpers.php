@@ -85,7 +85,7 @@ class DateHelpers
    */
   static public function parseJsDate(string $value): array {
     preg_match(DateHelpers::DATE_REGEXP, $value, $match);
-    return [intval($match[0]), intval($match[1]) - 1, intval($match[2])];
+    return [intval($match[1]), intval($match[2]) - 1, intval($match[3])];
   }
 
   /**

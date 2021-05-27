@@ -32,8 +32,8 @@ class OpeningHours extends Model
 
     return Template::raw(
       implode('', array_merge([
-        'function ', $name, '(value){',
-          'value=value instanceof Date?value:new Date();',
+        'function ', $name, '(v){',
+          'v=v instanceof Date?v:new Date();',
           ], $conditions, [
           'return{state:"closed",times:[]};',
         '}',

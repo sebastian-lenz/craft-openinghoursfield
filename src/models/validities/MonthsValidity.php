@@ -25,9 +25,9 @@ class MonthsValidity extends AlwaysValidity
 
     $condition = implode('', [
       $json, '.filter(function(r){return ',
-        'value.getMonth()>=r[0]&&',
-        'value.getMonth()<=r[1]',
-      '}).length>=0'
+        'v.getMonth()>=r[0]&&',
+        'v.getMonth()<=r[1]',
+      '}).length>0'
     ]);
 
     return parent::getJsCondition() . '&&' . $condition;
@@ -102,12 +102,12 @@ class MonthsValidity extends AlwaysValidity
     return array_map(function($group) use ($timeSpec) {
       ['min' => $min, 'max' => $max] = $group;
       $year = date('Y') + (date('m') > $max ? 1 : 0);
-      $maxDay = DateHelpers::daysInMonth($max, $year);
+      $maxDays = DateHelpers::daysInMonth($max, $year);
 
       return array_merge($timeSpec, [
         'dayOfWeek' => DateHelpers::toDaysOfWeek($this->weekDays),
         'validFrom' => sprintf('%04d-%02d-01', $year, $min + 1),
-        'validThrough' => sprintf('%04d-%02d-%02d', $year, $max + 1, $maxDay),
+        'validThrough' => sprintf('%04d-%02d-%02d', $year, $max + 1, $maxDays),
       ]);
     }, $this->getMonthGroups());
   }

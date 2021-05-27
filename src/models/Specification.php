@@ -45,7 +45,7 @@ class Specification extends Model
   /**
    * @return string
    */
-  public function getJsCondition() {
+  public function getJsCondition(): string {
     $condition = $this->validity->getJsCondition();
     $json = json_encode([
       'state' => $this->state,
@@ -69,6 +69,7 @@ class Specification extends Model
 
   /**
    * @return Validity
+   * @noinspection PhpUnused (Public API)
    */
   public function getValidity(): Validity {
     return $this->_validity;

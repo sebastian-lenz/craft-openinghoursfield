@@ -39,9 +39,9 @@ class RangesValidity extends AlwaysValidity
 
     $condition = implode('', [
       $json, '.filter(function(r){return ',
-        'value>=new Date(r[0],r[1],r[2])&&',
-        'value<=new Date(r[3],r[4],r[5]+1)',
-      '}).length>=0'
+        'v.getTime()>=(new Date(r[0],r[1],r[2])).getTime()&&',
+        'v.getTime()<=(new Date(r[3],r[4],r[5]+1)).getTime()',
+      '}).length>0'
     ]);
 
     return parent::getJsCondition() . '&&' . $condition;
