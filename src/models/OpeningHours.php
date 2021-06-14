@@ -34,6 +34,10 @@ class OpeningHours extends Model
       implode('', array_merge([
         'function ', $name, '(v){',
           'v=v instanceof Date?v:new Date();',
+          'v.setHours(0);',
+          'v.setMinutes(0);',
+          'v.setSeconds(0);',
+          'v.setMilliseconds(0);',
           ], $conditions, [
           'return{state:"closed",times:[]};',
         '}',

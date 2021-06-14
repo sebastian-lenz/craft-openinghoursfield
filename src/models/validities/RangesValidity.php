@@ -40,7 +40,7 @@ class RangesValidity extends AlwaysValidity
     $condition = implode('', [
       $json, '.filter(function(r){return ',
         'v.getTime()>=(new Date(r[0],r[1],r[2])).getTime()&&',
-        'v.getTime()<=(new Date(r[3],r[4],r[5]+1)).getTime()',
+        'v.getTime()<=(new Date(r[3],r[4],r[5])).getTime()',
       '}).length>0'
     ]);
 
