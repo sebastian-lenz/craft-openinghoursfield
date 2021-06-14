@@ -20,7 +20,7 @@ class AlwaysValidity extends Validity
    * @inheritDoc
    */
   public function getJsCondition(): string {
-    return json_encode($this->weekDays) . '.indexOf(v.getDay())>0';
+    return json_encode($this->weekDays) . '.indexOf(v.getDay())!=-1';
   }
 
   /**
