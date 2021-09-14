@@ -28,7 +28,7 @@ class DatesValidity extends Validity
       $json, '.filter(function(d){return ',
         'v.getFullYear()==d[0]&&',
         'v.getMonth()==d[1]&&',
-        'v.getDay()==d[2]',
+        'v.getDate()==d[2]',
       '}).length>0'
     ]);
   }
