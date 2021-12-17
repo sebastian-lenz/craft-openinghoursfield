@@ -50,7 +50,7 @@ class OpeningHoursField extends Field
    * @inheritDoc
    */
   public function serializeValue($value, ElementInterface $element = null) {
-    return $value instanceof OpeningHours ? $value->toJson() : null;
+    return $value instanceof OpeningHours ? json_encode($value->toJson()) : null;
   }
 
 
