@@ -13,7 +13,7 @@ class AlwaysValidity extends Validity
   /**
    * @var int[]
    */
-  public $weekDays = [];
+  public array $weekDays = [];
 
 
   /**
@@ -26,7 +26,7 @@ class AlwaysValidity extends Validity
   /**
    * @inheritDoc
    */
-  public function init() {
+  public function init(): void {
     parent::init();
     sort($this->weekDays);
   }
@@ -42,7 +42,7 @@ class AlwaysValidity extends Validity
    * @inheritDoc
    * @noinspection PhpMissingReturnTypeInspection
    */
-  public function rules() {
+  public function rules(): array {
     return array_merge(parent::rules(), [
       ['weekDays', 'required'],
       ['weekDays', 'each', 'rule' => ['integer', 'min' => 0, 'max' => 6]],

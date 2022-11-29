@@ -16,7 +16,7 @@ class RangesValidity extends AlwaysValidity
   /**
    * @var DateRange[]
    */
-  private $_dateRanges;
+  private array $_dateRanges;
 
 
   /**
@@ -50,7 +50,7 @@ class RangesValidity extends AlwaysValidity
   /**
    * @inheritDoc
    */
-  public function init() {
+  public function init(): void {
     parent::init();
     usort($this->_dateRanges, [DateRange::class, 'compare']);
   }
@@ -66,7 +66,7 @@ class RangesValidity extends AlwaysValidity
    * @inheritDoc
    * @noinspection PhpMissingReturnTypeInspection
    */
-  public function rules() {
+  public function rules(): array {
     return array_merge(parent::rules(), [
       ['dateRanges', 'required'],
       ['dateRanges', ModelArrayValidator::class, 'modelClass' => DateRange::class]
@@ -74,9 +74,9 @@ class RangesValidity extends AlwaysValidity
   }
 
   /**
-   * @param mixed $value
+   * @param DateRange|DateRange[]|array $value
    */
-  public function setDateRanges($value) {
+  public function setDateRanges(DateRange|array $value) {
     if (!is_array($value)) {
       $value = [$value];
     }

@@ -13,7 +13,7 @@ class DatesValidity extends Validity
   /**
    * @var string[]
    */
-  public $dates = [];
+  public array $dates = [];
 
 
   /**
@@ -36,7 +36,7 @@ class DatesValidity extends Validity
   /**
    * @inheritDoc
    */
-  public function init() {
+  public function init(): void {
     parent::init();
     sort($this->dates);
   }
@@ -52,7 +52,7 @@ class DatesValidity extends Validity
    * @return array
    * @noinspection PhpMissingReturnTypeInspection
    */
-  public function rules() {
+  public function rules(): array {
     return array_merge(parent::rules(), [
       ['dates', 'required'],
       ['dates', 'each', 'rule' => ['match', 'pattern' => DateHelpers::DATE_REGEXP]]

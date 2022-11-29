@@ -18,7 +18,7 @@ abstract class Validity extends Model
   /**
    * @var string[]
    */
-  static $TYPES = [
+  static array $TYPES = [
     'always' => AlwaysValidity::class,
     'dates' => DatesValidity::class,
     'months' => MonthsValidity::class,

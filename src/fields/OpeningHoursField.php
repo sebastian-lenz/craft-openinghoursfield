@@ -30,7 +30,7 @@ class OpeningHoursField extends Field
   /**
    * @inheritDoc
    */
-  public function normalizeValue($value, ElementInterface $element = null) {
+  public function normalizeValue(mixed $value, ?ElementInterface $element = null): OpeningHours {
     if ($value instanceof OpeningHours) {
       return $value;
     }
@@ -49,7 +49,7 @@ class OpeningHoursField extends Field
   /**
    * @inheritDoc
    */
-  public function serializeValue($value, ElementInterface $element = null) {
+  public function serializeValue(mixed $value, ?ElementInterface $element = null): string|bool|null {
     return $value instanceof OpeningHours ? json_encode($value->toJson()) : null;
   }
 

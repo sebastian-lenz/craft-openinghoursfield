@@ -17,7 +17,7 @@ class OpeningHours extends Model
   /**
    * @var Specification[]
    */
-  private $_specifications = [];
+  private array $_specifications = [];
 
 
   /**
@@ -80,7 +80,7 @@ class OpeningHours extends Model
    * @return array
    * @noinspection PhpMissingReturnTypeInspection
    */
-  public function rules() {
+  public function rules(): array {
     return array_merge(parent::rules(), [
       ['specifications', 'required'],
       ['specifications', ModelArrayValidator::class, 'modelClass' => Specification::class]

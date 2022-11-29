@@ -19,27 +19,27 @@ class Specification extends Model
   /**
    * @var bool
    */
-  public $enabled = true;
+  public bool $enabled = true;
 
   /**
    * @var string
    */
-  public $state = 'closed';
+  public string $state = 'closed';
 
   /**
    * @var string
    */
-  public $uid;
+  public string $uid;
 
   /**
    * @var TimeRange[]
    */
-  private $_timeRanges = [];
+  private array $_timeRanges = [];
 
   /**
    * @var Validity
    */
-  private $_validity;
+  private Validity $_validity;
 
 
   /**
@@ -78,7 +78,7 @@ class Specification extends Model
   /**
    * @inheritDoc
    */
-  public function init() {
+  public function init(): void {
     parent::init();
 
     if ($this->state == 'closed') {
@@ -103,7 +103,7 @@ class Specification extends Model
    * @inheritDoc
    * @noinspection PhpMissingReturnTypeInspection
    */
-  public function rules() {
+  public function rules(): array {
     return array_merge(parent::rules(), [
       [['enabled', 'state', 'timeRanges', 'uid', 'validity'], 'required'],
       ['enabled', 'bool'],
@@ -115,10 +115,10 @@ class Specification extends Model
   }
 
   /**
-   * @param mixed $value
+   * @param TimeRange|TimeRange[]|array $value
    * @throws Exception
    */
-  public function setTimeRanges($value) {
+  public function setTimeRanges(TimeRange|array $value) {
     if (!is_array($value)) {
       $value = [$value];
     }
@@ -129,10 +129,10 @@ class Specification extends Model
   }
 
   /**
-   * @param mixed $value
+   * @param Validity|array $value
    * @throws Exception
    */
-  public function setValidity($value) {
+  public function setValidity(Validity|array $value) {
     if (!($value instanceof Validity)) {
       $value = Validity::create($value);
     }

@@ -12,7 +12,7 @@ class MonthsValidity extends AlwaysValidity
   /**
    * @var int[]
    */
-  public $months = [];
+  public array $months = [];
 
 
   /**
@@ -36,7 +36,7 @@ class MonthsValidity extends AlwaysValidity
   /**
    * @inheritDoc
    */
-  public function init() {
+  public function init(): void {
     parent::init();
     sort($this->months);
   }
@@ -76,7 +76,7 @@ class MonthsValidity extends AlwaysValidity
    * @inheritDoc
    * @noinspection PhpMissingReturnTypeInspection
    */
-  public function rules() {
+  public function rules(): array {
     return array_merge(parent::rules(), [
       ['months', 'required'],
       ['months', 'each', 'rule' => ['integer', 'min' => 1, 'max' => 12]],
@@ -101,7 +101,7 @@ class MonthsValidity extends AlwaysValidity
   public function toLinkingData(array $timeSpec): array {
     return array_map(function($group) use ($timeSpec) {
       ['min' => $min, 'max' => $max] = $group;
-      $year = date('Y') + (date('m') > $max ? 1 : 0);
+      $year = intval(date('Y')) + (date('m') > $max ? 1 : 0);
       $maxDays = DateHelpers::daysInMonth($max, $year);
 
       return array_merge($timeSpec, [

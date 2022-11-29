@@ -16,17 +16,17 @@ class DateRange extends Model
   /**
    * @var string
    */
-  public $from = '';
+  public string $from = '';
 
   /**
    * @var string
    */
-  public $to = '';
+  public string $to = '';
 
   /**
    * @var string
    */
-  public $uid;
+  public string $uid;
 
 
   /**
@@ -64,7 +64,7 @@ class DateRange extends Model
   /**
    * @inheritDoc
    */
-  public function init() {
+  public function init(): void {
     parent::init();
 
     $min = $this->getMinDate();
@@ -77,7 +77,7 @@ class DateRange extends Model
    * @inheritDoc
    * @noinspection PhpMissingReturnTypeInspection
    */
-  public function rules() {
+  public function rules(): array {
     return array_merge(parent::rules(), [
       [['from', 'to', 'uid'], 'required'],
       [['from', 'to'], 'match', 'pattern' => DateHelpers::DATE_REGEXP],

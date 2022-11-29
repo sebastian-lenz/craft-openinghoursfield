@@ -13,17 +13,17 @@ class TimeRange extends Model
   /**
    * @var int
    */
-  public $closes = 0;
+  public int $closes = 0;
 
   /**
    * @var int
    */
-  public $opens = 0;
+  public int $opens = 0;
 
   /**
    * @var string
    */
-  public $uid;
+  public string $uid;
 
   /**
    * Linking data representing a closed time range
@@ -48,7 +48,7 @@ class TimeRange extends Model
    * @inheritDoc
    * @noinspection PhpMissingReturnTypeInspection
    */
-  public function rules() {
+  public function rules(): array {
     return array_merge(parent::rules(), [
       [['closes', 'opens', 'uid'], 'required'],
       [['closes', 'opens'], 'each', 'rule' => ['integer', 'min' => 0, 'max' => DateHelpers::ONE_DAY]],
