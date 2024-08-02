@@ -5,8 +5,8 @@
   "license": "MIT",
   "require": {
     "ext-json": "*",
-    "craftcms/cms": "^4.0.2",
-    "sebastianlenz/craft-utils": "^3.0.6"
+    "craftcms/cms": "^5.0.0",
+    "sebastianlenz/craft-utils": "^4.0.1"
   },
   "autoload": {
     "psr-4": {
@@ -25,7 +25,7 @@
       "craftcms/plugin-installer": true
     },
     "platform": {
-      "php": "8.0.2"
+      "php": "8.2.0"
     }
   }
 }
