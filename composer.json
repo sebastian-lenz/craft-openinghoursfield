@@ -6,7 +6,7 @@
   "require": {
     "ext-json": "*",
     "craftcms/cms": "^5.0.0",
-    "sebastianlenz/craft-utils": "^4.0.1"
+    "sebastianlenz/craft-utils": "^4.0.7"
   },
   "autoload": {
     "psr-4": {
